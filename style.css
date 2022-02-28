@@ -63,6 +63,11 @@ h3 {
   border-radius: 0 5px 5px 0;
   cursor: pointer;
   font-size: 20px;
+  transition: all 0.8s;
+}
+.search-button:hover {
+  background-color: var(--Cyan);
+  color: var(--mainBG);
 }
 
 .wrap {

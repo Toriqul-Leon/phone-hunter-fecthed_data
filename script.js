@@ -8,9 +8,9 @@ fetchData();
 
 const loadData = (phones) => {
   const sectionContainer = document.getElementById("section-container");
-
   for (const phone of phones) {
     // console.log(phone);
+
     const article = document.createElement("article");
     article.innerHTML = ` <article  class="phone-container">
 
@@ -36,6 +36,7 @@ const loadData = (phones) => {
 // !Managing Search search-text
 document.getElementById("search-btn").addEventListener("click", () => {
   const searchText = document.getElementById("search-text").value;
+
   const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`;
   fetch(url)
     .then((res) => res.json())
@@ -46,12 +47,15 @@ document.getElementById("search-btn").addEventListener("click", () => {
 const searchResult = (results) => {
   const sectionContainer = document.getElementById("section-container");
   sectionContainer.textContent = "";
+  const sliced = results.slice(0, 20);
+  const searchText = (document.getElementById("search-text").value = "");
+  searchText.value = "";
   //   console.log(results);
-  for (const data of results) {
-    // console.log(data.phone_name);
+  for (const data of sliced) {
+    console.log(data.phone_name);
     const article = document.createElement("article");
-    article.innerHTML = ` <article  class="phone-container">
 
+    article.innerHTML = ` <article  class="phone-container">
     <div>
      <img class="main-image" src="${data.image}" alt="" width="150" height="200">
    </div>
