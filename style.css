@@ -48,7 +48,7 @@ h2 {
   color: var(--SoftBlue);
 }
 
-.searchTerm:focus {
+.search-term:focus {
   color: var(--mainBG);
 }
 
