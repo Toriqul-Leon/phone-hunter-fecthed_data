@@ -77,7 +77,6 @@ const searchResult = (results) => {
 // !Details
 const loadSingleData = (phone_id) => {
   const url = `https://openapi.programming-hero.com/api/phone/${phone_id}`;
-  console.log(url);
   fetch(url)
     .then((res) => res.json())
     .then((singlePhone) => showDetails(singlePhone.data));

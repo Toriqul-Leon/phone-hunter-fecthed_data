@@ -3,6 +3,14 @@
 
 /* !Primary */
 
+/* !RESET */
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+}
+
 /*! Colors */
 :root {
   --SoftBlue: hsl(215, 51%, 70%);
@@ -16,6 +24,7 @@
 body {
   font-family: "Poppins", sans-serif;
   background-color: var(--mainBG);
+  line-height: 1.5;
 }
 h3 {
   color: var(--White);
@@ -87,10 +96,6 @@ h3 {
   place-items: center;
   column-gap: 0;
 }
-.middle-text {
-  font-size: 18px;
-  color: var(--SoftBlue);
-}
 
 /* !Phone Container */
 .phone-container {
@@ -147,3 +152,85 @@ h3 {
   margin: 0 auto;
 }
 /* !End of Section */
+
+/* !Media Queries */
+@media only screen and (max-width: 768px) {
+  h3 {
+    color: var(--White);
+    text-align: center;
+    font-size: 25px;
+    margin: 5px;
+  }
+
+  /* !Main Heading */
+  .heading {
+    color: var(--SoftBlue);
+    text-align: center;
+    margin: 50px 0 85px 0;
+    text-transform: uppercase;
+  }
+  /* !Search Box */
+
+  .search-term {
+    width: 100%;
+    border: 3px solid var(--line);
+    border-right: none;
+    padding: 10px;
+    font-size: 17px;
+    height: 35px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    font-weight: 600;
+    color: var(--SoftBlue);
+  }
+
+  .search-button {
+    width: 60px;
+    height: 60px;
+    border: 1px solid var(--cardBG);
+    background: var(--cardBG);
+    text-align: center;
+    color: var(--White);
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+    transition: all 0.8s;
+  }
+
+  .wrap {
+    width: 75%;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    margin: 25px 0;
+    transform: translate(-50%, -50%);
+  }
+  /* !End of Search Box */
+
+  /* !Section */
+  #section-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    margin: 0 auto;
+  }
+
+  /* !Phone Container */
+  .phone-container {
+    margin-top: 50px;
+    width: 280px;
+    height: 400px;
+  }
+
+  /* !Button */
+  .main-btn {
+    cursor: pointer;
+    width: 130px;
+    height: 40px;
+  }
+
+  .line-view {
+    width: 50%;
+  }
+  /* !End of Section */
+}
+/* !End of Media Queries */
