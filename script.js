@@ -52,7 +52,7 @@ const searchResult = (results) => {
   searchText.value = "";
   //   console.log(results);
   for (const data of sliced) {
-    console.log(data.phone_name);
+    // console.log(data.phone_name);
     const article = document.createElement("article");
 
     article.innerHTML = ` <article  class="phone-container">
@@ -83,9 +83,29 @@ const loadSingleData = (phone_id) => {
 };
 
 const showDetails = (details) => {
-  modalDetails();
-  console.log(details);
+  const modalContainer = document.getElementById("modal-element");
+  const div = document.createElement("div");
+  div.classList.add("modal-content");
+  div.innerHTML = `<span id="close-modal" class="close">&times;</span>
+  <img src="${details.image}" alt="">
+    <h1>${details.name}</h1>
+    <h6>Release Date: ${details.releaseDate}</h6>
+    <h5>Main Features</h5>
+    <p> <h6>Chipset:</h6> ${details.mainFeatures.chipSet},
+   <h6>Display:</h6> ${details.mainFeatures.displaySize},
+   <h6>Memory:</h6> ${details.mainFeatures.memory},
+    <h6>Storage:</h6> ${details.mainFeatures.storage},
+    <h5>Sensors</h5>
+    </p>
+    <p> ${details.mainFeatures.sensors}. 
+      <h5>Others:</h5>
+    </p>
   
+    `;
+
+  modalContainer.appendChild(div);
+  modalDetails();
+  console.log(details.mainFeatures.sensors);
 };
 
 // !Modal Details
@@ -96,11 +116,13 @@ const modalDetails = () => {
   // !When click on close button
   closeModal.addEventListener("click", () => {
     modal.style.display = "none";
+    modal.textContent = "";
   });
   // !When the user clicks anywhere outside of the modal
   window.onclick = (event) => {
     if (event.target == modal) {
       modal.style.display = "none";
+      modal.textContent = "";
     }
   };
 };
