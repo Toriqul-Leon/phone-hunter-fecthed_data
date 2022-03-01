@@ -84,8 +84,10 @@ const loadSingleData = (phone_id) => {
 
 const showDetails = (details) => {
   const modalContainer = document.getElementById("modal-element");
+
   const div = document.createElement("div");
   div.classList.add("modal-content");
+
   div.innerHTML = `<span id="close-modal" class="close">&times;</span>
   <img src="${details.image}" alt="">
     <h1>${details.name}</h1>
@@ -97,15 +99,22 @@ const showDetails = (details) => {
     <h6>Storage:</h6> ${details.mainFeatures.storage},
     <h5>Sensors</h5>
     </p>
-    <p> ${details.mainFeatures.sensors}. 
-      <h5>Others:</h5>
-    </p>
+    <p> ${details.mainFeatures.sensors} </p>
   
+    
+      <h5>Others</h5>
+      <h6>WLAN:</h6>${details.others?.WLAN ?? ""}
+      <h6>GPS:</h6>${details.others?.GPS ?? ""}
+      <h6>Bluetooth:</h6>${details.others?.Bluetooth ?? ""}
+      <h6>NFC:</h6>${details.others?.NFC ?? ""}
+      <h6>Radio:</h6>${details.others?.Radio ?? ""}
+      <h6>USB:</h6>${details.others?.USB ?? ""}
+    
     `;
 
   modalContainer.appendChild(div);
   modalDetails();
-  console.log(details.mainFeatures.sensors);
+  console.log(details);
 };
 
 // !Modal Details
@@ -113,15 +122,19 @@ const modalDetails = () => {
   const modal = document.getElementById("modal-element");
   const closeModal = document.getElementById("close-modal");
   modal.style.display = "block";
+  document.body.style.overflow = "hidden";
+
   // !When click on close button
   closeModal.addEventListener("click", () => {
     modal.style.display = "none";
+    document.body.style.overflow = "auto";
     modal.textContent = "";
   });
   // !When the user clicks anywhere outside of the modal
   window.onclick = (event) => {
     if (event.target == modal) {
       modal.style.display = "none";
+      document.body.style.overflow = "auto";
       modal.textContent = "";
     }
   };
