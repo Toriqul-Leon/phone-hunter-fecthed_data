@@ -96,9 +96,10 @@ const showDetails = (details) => {
     <p> <h6>Chipset:</h6> ${details.mainFeatures.chipSet},
    <h6>Display:</h6> ${details.mainFeatures.displaySize},
    <h6>Memory:</h6> ${details.mainFeatures.memory},
-    <h6>Storage:</h6> ${details.mainFeatures.storage},
+    <h6>Storage:</h6> ${details.mainFeatures.storage}.
+     </p>
     <h5>Sensors</h5>
-    </p>
+   
     <p> ${details.mainFeatures.sensors.join(",\n")}. </p>
   
       <h5>Others</h5>
