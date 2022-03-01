@@ -144,13 +144,13 @@ h3 {
   color: var(--Cyan);
 }
 /* !See more Button */
-.seeMore-button {
+#seeMore-button {
   padding: 10px;
   text-align: center;
   margin: 20px;
 }
 
-.seeMore-button button {
+#seeMore-button button {
   width: 250px;
   height: 50px;
   font-size: 1.5rem;
@@ -328,3 +328,25 @@ h3 {
 }
 
 /* !End of modal */
+
+/* !Spinner */
+#loader {
+  display: none;
+  margin: 110px auto;
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid var(--SoftBlue);
+  border-radius: 50%;
+  width: 120px;
+  opacity: 0.5;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
