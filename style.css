@@ -72,7 +72,7 @@ h3 {
 
 .search-button {
   width: 70px;
-  height: 66px;
+  height: 60px;
   border: 1px solid var(--cardBG);
   background: var(--cardBG);
   text-align: center;
@@ -210,6 +210,9 @@ h3 {
     font-size: 35px;
     margin-bottom: 50px;
     height: 40px;
+  }
+  .search-button {
+    height: 65px;
   }
   .heading {
     font-size: 2.5rem;

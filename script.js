@@ -43,6 +43,7 @@ const searchResult = (results) => {
 </div>
  </article>`;
       sectionContainer.appendChild(article);
+      document.getElementById("error-handle").style.display = "none";
     });
   }
   // !Hide Spinner & Display stuff
