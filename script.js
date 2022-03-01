@@ -67,7 +67,7 @@ const searchResult = (results) => {
     
     <div class="line-view"></div>
     <div class="button-placement">  
-      <button onclick="loadSingleData('${data.slug}')" class="main-btn">Details</button>
+      <button onclick="loadSingleData('${data.slug}')" id="modal-btn" class="main-btn">Details</button>
 </div>
  </article>`;
     sectionContainer.appendChild(article);
@@ -83,5 +83,23 @@ const loadSingleData = (phone_id) => {
 };
 
 const showDetails = (details) => {
+  modalDetails();
   console.log(details);
+};
+
+// !Modal Details
+const modalDetails = () => {
+  const modal = document.getElementById("modalEl");
+  const closeModal = document.getElementById("close-modal");
+  modal.style.display = "block";
+  // !When click on close button
+  closeModal.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+  // !When the user clicks anywhere outside of the modal
+  window.onclick = (event) => {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
 };
