@@ -4,60 +4,53 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- !FontAwesome -->
-  <script src="https://kit.fontawesome.com/b84bbd1a02.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/b84bbd1a02.js"
+      crossorigin="anonymous"
+    ></script>
     <!-- !CSS -->
     <link rel="stylesheet" href="style.css" />
-    
-<!-- !FAV -->
+    <!-- !FAV -->
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
-
     <title>The Phone Zone</title>
-
-    </style>
   </head>
   <body>
-      <!-- !header -->
-<header>
-    <h1 class="heading">The Phone Zone</h1>
-    <!-- !Search BOX -->
-<div class="wrap">
-   <div class="search">
-      <input id="search-text" type="text" class="search-term" placeholder="What are you looking for?">
-      <button id="search-btn" type="submit" class="search-button">
-        <i class="fa fa-search"></i>
-     </button>
-   </input>
-</div>
-</header>
- <!-- !End of header -->
+    <!-- !header -->
+    <header>
+      <h1 class="heading">The Phone Zone</h1>
+      <!-- !Search BOX -->
+      <div class="wrap">
+        <div class="search">
+          <input
+            id="search-text"
+            type="text"
+            class="search-term"
+            placeholder="What are you looking for?"
+          />
+          <button id="search-btn" type="submit" class="search-button">
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+    <!-- !End of header -->
     <!-- !Section cards-->
-   <main>
-        
-    <div id="loader"></div>
-    <section id="section-container"></section>
-        
- <!-- !End of Section cards -->
-
-
- <!-- !Section Modal  -->
-
-<section id="modal-element" class="modal">
-
-
-
-</section>
-
-<!-- !End of Section Modal   -->
-<div onclick="showMore()" id="seeMore-button">
-  <button id="modal-btn" class="main-btn ">SEE MORE</button></div>
-   </main>
-   
-     
+    <main>
+      <div id="loader"></div>
+      <section id="section-container"></section>
+      <!-- !End of Section cards -->
+      <!-- !Section Modal  -->
+      <section id="modal-element" class="modal"></section>
+      <!-- !End of Section Modal   -->
+      <div onclick="showMore()" id="seeMore-button">
+        <button id="modal-btn" class="main-btn">SEE MORE</button>
+      </div>
+    </main>
     <!-- !JS -->
     <script src="./script.js"></script>
   </body>

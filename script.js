@@ -1,12 +1,14 @@
 // !Spinner
-const toggleSpinner = (displayStyle) => {
+const toggleSpinner = (displayStyle, hideSection) => {
   document.getElementById("loader").style.display = displayStyle;
+  document.getElementById("section-container").style.display = hideSection;
 };
 // !Managing search-text
 document.getElementById("search-btn").addEventListener("click", () => {
   const searchText = document.getElementById("search-text").value;
-  // !Display Spinner
-  toggleSpinner("block");
+  // !Display Spinner & Hide stuff
+  toggleSpinner("block", "none");
+
   const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`;
   fetch(url)
     .then((res) => res.json())
@@ -23,7 +25,7 @@ const searchResult = (results) => {
   for (const data of sliced) {
     const article = document.createElement("article");
 
-    article.innerHTML = ` <article  class="phone-container">
+    article.innerHTML = ` <article  id="phone-container">
     <div>
      <img class="main-image" src="${data.image}" alt="" width="150" height="200">
    </div>
@@ -39,8 +41,9 @@ const searchResult = (results) => {
 </div>
  </article>`;
     sectionContainer.appendChild(article);
-    toggleSpinner("none");
   }
+  // !Hide Spinner & Display stuff
+  toggleSpinner("none", "grid");
 };
 
 // !SEE MORE
@@ -60,7 +63,7 @@ const showDetails = (details) => {
   const div = document.createElement("div");
   div.classList.add("modal-content");
 
-  div.innerHTML = `<span id="close-modal" class="close">&times;</span>
+  div.innerHTML = `<span id="close-modal" class="close">×</span>
   <img src="${details.image}" alt="">
     <h1>${details.name}</h1>
     <h6>Release Date: ${details?.releaseDate || "No Release date Found"}.</h6>
