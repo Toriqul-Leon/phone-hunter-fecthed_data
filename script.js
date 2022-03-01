@@ -5,10 +5,10 @@ const toggleSpinner = (displayStyle, hideSection) => {
 };
 // !Managing search-text
 document.getElementById("search-btn").addEventListener("click", () => {
-  const searchText = document.getElementById("search-text").value;
+  const searchTextMain = document.getElementById("search-text").value;
+  searchText = searchTextMain.toLowerCase();
   // !Display Spinner & Hide stuff
   toggleSpinner("block", "none");
-
   const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`;
   fetch(url)
     .then((res) => res.json())
@@ -22,10 +22,12 @@ const searchResult = (results) => {
   const sliced = results.slice(0, 20);
   const searchText = (document.getElementById("search-text").value = "");
   searchText.value = "";
-  for (const data of sliced) {
-    const article = document.createElement("article");
-
-    article.innerHTML = ` <article  id="phone-container">
+  if (results.length === 0) {
+    console.log("NO");
+  } else {
+    sliced.forEach((data) => {
+      const article = document.createElement("article");
+      article.innerHTML = ` <article  id="phone-container">
     <div>
      <img class="main-image" src="${data.image}" alt="" width="150" height="200">
    </div>
@@ -40,14 +42,12 @@ const searchResult = (results) => {
       <button onclick="loadSingleData('${data.slug}')" id="modal-btn" class="main-btn">Details</button>
 </div>
  </article>`;
-    sectionContainer.appendChild(article);
+      sectionContainer.appendChild(article);
+    });
   }
   // !Hide Spinner & Display stuff
   toggleSpinner("none", "grid");
 };
-
-// !SEE MORE
-const showMore = () => {};
 
 // !Fetching Details
 const loadSingleData = (phone_id) => {
