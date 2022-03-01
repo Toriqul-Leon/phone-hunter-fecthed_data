@@ -99,9 +99,8 @@ const showDetails = (details) => {
     <h6>Storage:</h6> ${details.mainFeatures.storage},
     <h5>Sensors</h5>
     </p>
-    <p> ${details.mainFeatures.sensors} </p>
+    <p> ${details.mainFeatures.sensors.join(",\n")}. </p>
   
-    
       <h5>Others</h5>
       <h6>WLAN:</h6>${details.others?.WLAN ?? ""}
       <h6>GPS:</h6>${details.others?.GPS ?? ""}
@@ -111,7 +110,6 @@ const showDetails = (details) => {
       <h6>USB:</h6>${details.others?.USB ?? ""}
     
     `;
-
   modalContainer.appendChild(div);
   modalDetails();
   console.log(details);
