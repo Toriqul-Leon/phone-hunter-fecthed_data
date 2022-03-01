@@ -104,6 +104,7 @@ h3 {
   display: grid;
   grid-template-columns: repeat(3, auto);
   place-items: center;
+  padding-bottom: 50px;
   margin: 0 auto;
   column-gap: 0px;
   overflow: hidden;
