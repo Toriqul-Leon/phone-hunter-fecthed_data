@@ -4,6 +4,7 @@
 /* !Primary */
 
 /* !RESET */
+
 *,
 ::after,
 ::before {
@@ -95,6 +96,8 @@ h3 {
   place-items: center;
   margin: 0 10em;
   column-gap: 50px;
+  padding: 25px 25px;
+  overflow: hidden;
 }
 
 /* !Phone Container */
@@ -108,7 +111,7 @@ h3 {
   height: 500px;
   border-radius: 20px;
   background: var(--cardBG);
-  box-shadow: 21px 21px 43px #122337, -21px -21px 43px #00060e;
+  box-shadow: 21px 21px 43px #122337, -21px -21px 43px #00060efd;
 }
 
 .main-image {
@@ -195,7 +198,7 @@ h3 {
 
   /* !Main Heading */
   .heading {
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: var(--SoftBlue);
     text-align: center;
     margin: 50px 0 85px 0;
@@ -265,48 +268,6 @@ h3 {
   .line-view {
     width: 50%;
   }
-  /* !End of Section */
-}
-
-/* !End of Media Queries */
-
-/* !Modal */
-
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: #000; /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.3);
-}
-.modal-content {
-  background-color: #f5f5f5;
-  height: auto;
-  width: 50vw;
-  border-radius: 2px;
-  box-shadow: 0px 0px 14px 1px #dd6ff8;
-  margin: 15% auto;
-  padding: 1.5rem;
-}
-.close {
-  color: #252525;
-  float: right;
-  font-size: 2.25rem;
-  font-weight: bold;
-  margin-right: 1rem;
-}
-.close:hover,
-.close:focus {
-  color: #dd6ff8;
-  text-decoration: none;
-  cursor: pointer;
-}
-@media screen and (max-width: 576px) {
   .modal-content {
     width: 50%;
   }
@@ -314,5 +275,43 @@ h3 {
   p {
     width: 100%;
   }
+  /* !End of Section */
 }
+/* !End of Media Queries */
+
+/* !Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0%;
+  top: 0%;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.modal-content {
+  background-color: var(--White);
+  height: auto;
+  width: 50vw;
+  border-radius: 2px;
+  box-shadow: 0px 0px 14px 1px var(--SoftBlue);
+  margin: 15% auto;
+  padding: 1.5rem;
+}
+.close {
+  color: var(--line);
+  float: right;
+  font-size: 2.25rem;
+  font-weight: bold;
+  margin-right: 1rem;
+}
+.close:hover,
+.close:focus {
+  color: var(--Cyan);
+  text-decoration: none;
+  cursor: pointer;
+}
+
 /* !End of modal */

@@ -74,7 +74,7 @@ const searchResult = (results) => {
   }
 };
 
-// !Details
+// !Fetching Details
 const loadSingleData = (phone_id) => {
   const url = `https://openapi.programming-hero.com/api/phone/${phone_id}`;
   fetch(url)
@@ -89,7 +89,7 @@ const showDetails = (details) => {
 
 // !Modal Details
 const modalDetails = () => {
-  const modal = document.getElementById("modalEl");
+  const modal = document.getElementById("modal-element");
   const closeModal = document.getElementById("close-modal");
   modal.style.display = "block";
   // !When click on close button
