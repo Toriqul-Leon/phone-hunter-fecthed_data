@@ -34,6 +34,7 @@ h3 {
 
 /* !Main Heading */
 .heading {
+  font-size: 3em;
   color: var(--SoftBlue);
   text-align: center;
   margin-top: 50px;
@@ -268,7 +269,7 @@ h3 {
     width: 50%;
   }
   .modal-content {
-    width: 50%;
+    width: 75%;
   }
 
   p {

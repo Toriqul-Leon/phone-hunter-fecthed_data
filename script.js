@@ -85,6 +85,7 @@ const loadSingleData = (phone_id) => {
 const showDetails = (details) => {
   modalDetails();
   console.log(details);
+  
 };
 
 // !Modal Details
