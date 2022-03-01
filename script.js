@@ -23,7 +23,7 @@ const searchResult = (results) => {
   const searchText = (document.getElementById("search-text").value = "");
   searchText.value = "";
   if (results.length === 0) {
-    console.log("NO");
+    document.getElementById("error-handle").style.display = "block";
   } else {
     sliced.forEach((data) => {
       const article = document.createElement("article");
